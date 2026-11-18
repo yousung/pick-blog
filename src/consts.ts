@@ -5,9 +5,9 @@ export const SITE_AUTHOR = '감성개발자';
 
 // No AdSense on this site: revenue comes from Coupang Partners only.
 // Google Analytics 4 (러비쥬 account, property "pick.lovizu.com")
-export const GA_MEASUREMENT_ID = '';
+export const GA_MEASUREMENT_ID = 'G-VHVJQM4JR3';
 // Naver Search Advisor / Google Search Console ownership metas for https://pick.lovizu.com
-export const NAVER_SITE_VERIFICATION = '';
+export const NAVER_SITE_VERIFICATION = '64e624576e67c8a3b418e0b8d81a4f2d663344ff';
 export const GOOGLE_SITE_VERIFICATION = '';
 
 export const PARTNERS_DISCLOSURE = '이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.';
