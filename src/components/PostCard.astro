@@ -1,0 +1,25 @@
+---
+import { CATEGORIES } from '../consts';
+import { firstImage, getCategory, displayTags, type Post } from '../lib/posts';
+
+interface Props { post: Post; eager?: boolean }
+const { post, eager = false } = Astro.props;
+const cat = CATEGORIES[getCategory(post)];
+const img = firstImage(post);
+---
+
+<article class="card">
+  <a class="card-link" href={`/posts/${post.data.slug}/`}>
+    <div class="card-thumb">
+      {img ? <img src={img} alt="" loading={eager ? 'eager' : 'lazy'} decoding="async" width="640" height="400" /> : <span class="card-emoji" aria-hidden="true">{cat.emoji}</span>}
+      <span class="card-cat">{cat.label}</span>
+    </div>
+    <div class="card-body">
+      <h3>{post.data.title}</h3>
+      <p>{post.data.oneLineSummary ?? post.data.summary}</p>
+      <div class="card-meta">
+        {displayTags(post).map((t) => <span class="chip">#{t}</span>)}
+      </div>
+    </div>
+  </a>
+</article>

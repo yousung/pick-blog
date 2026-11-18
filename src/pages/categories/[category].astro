@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostCard from '../../components/PostCard.astro';
+import { CATEGORIES, type CategoryKey } from '../../consts';
+import { getPublishedPosts, getCategory } from '../../lib/posts';
+
+export async function getStaticPaths() {
+  return (Object.keys(CATEGORIES) as CategoryKey[]).map((category) => ({ params: { category } }));
+}
+
+const category = Astro.params.category as CategoryKey;
+const meta = CATEGORIES[category];
+const posts = (await getPublishedPosts()).filter((p) => getCategory(p) === category);
+---
+
+<BaseLayout title={`${meta.label} 상품 정리`} description={`${meta.blurb} — ${meta.label} 상품을 구매 기준과 장단점으로 비교했습니다.`}>
+  <section class="page-head">
+    <p class="eyebrow">{meta.emoji} CATEGORY</p>
+    <h1>{meta.label}</h1>
+    <p>{meta.blurb} · {posts.length}편</p>
+  </section>
+  <div class="card-grid">
+    {posts.map((post, i) => <PostCard post={post} eager={i < 2} />)}
+  </div>
+</BaseLayout>

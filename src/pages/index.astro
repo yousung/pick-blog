@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PostCard from '../components/PostCard.astro';
+import { CATEGORIES, type CategoryKey } from '../consts';
+import { getPublishedPosts, getCategory } from '../lib/posts';
+
+const posts = await getPublishedPosts();
+const latest = posts.slice(0, 6);
+const keys = Object.keys(CATEGORIES) as CategoryKey[];
+const counts = Object.fromEntries(keys.map((k) => [k, posts.filter((p) => getCategory(p) === k).length]));
+---
+
+<BaseLayout>
+  <section class="hero">
+    <p class="eyebrow">LOVIZU PICK</p>
+    <h1>살까 말까 고민될 때,<br /><em>고르는 기준</em>부터 봅니다.</h1>
+    <p class="hero-lead">11년 차 개발자가 책상 장비, 생활용품, 육아템을 사양·가격·후기 흐름으로 비교해 정리합니다. 장점만이 아니라 아쉬운 점과 맞지 않는 사람도 함께 적습니다.</p>
+    <div class="hero-cats">
+      {keys.map((k) => (
+        <a class="cat-pill" href={`/categories/${k}/`}>
+          <span aria-hidden="true">{CATEGORIES[k].emoji}</span>
+          <strong>{CATEGORIES[k].label}</strong>
+          <small>{counts[k]}편</small>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>최근 정리한 상품</h2>
+    </div>
+    <div class="card-grid">
+      {latest.map((post, i) => <PostCard post={post} eager={i < 2} />)}
+    </div>
+  </section>
+
+  {keys.map((k) => {
+    const list = posts.filter((p) => getCategory(p) === k).slice(0, 3);
+    return list.length > 0 && (
+      <section class="section">
+        <div class="section-head">
+          <h2><span aria-hidden="true">{CATEGORIES[k].emoji}</span> {CATEGORIES[k].label}</h2>
+          <a class="more" href={`/categories/${k}/`}>전체 보기 →</a>
+        </div>
+        <p class="section-blurb">{CATEGORIES[k].blurb}</p>
+        <div class="card-grid">
+          {list.map((post) => <PostCard post={post} />)}
+        </div>
+      </section>
+    );
+  })}
+</BaseLayout>

@@ -1,0 +1,61 @@
+---
+import { render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostCard from '../../components/PostCard.astro';
+import { CATEGORIES, PARTNERS_DISCLOSURE } from '../../consts';
+import { getPublishedPosts, getCategory, firstImage, displayTags, type Post } from '../../lib/posts';
+
+export async function getStaticPaths() {
+  const posts = await getPublishedPosts();
+  return posts.map((post) => ({ params: { slug: post.data.slug }, props: { post, all: posts } }));
+}
+
+const { post, all } = Astro.props as { post: Post; all: Post[] };
+const { Content } = await render(post);
+const catKey = getCategory(post);
+const cat = CATEGORIES[catKey];
+const related = all.filter((p) => p.id !== post.id && getCategory(p) === catKey).slice(0, 3);
+const dateText = post.data.date.toLocaleDateString('ko-KR', { year: 'numeric', month: 'long', day: 'numeric' });
+---
+
+<BaseLayout
+  title={post.data.title}
+  description={post.data.summary}
+  image={firstImage(post)}
+  type="article"
+  publishedTime={post.data.date.toISOString()}
+  modifiedTime={post.data.updatedDate?.toISOString()}
+  tags={post.data.tags}
+  canonical={post.data.canonical}
+>
+  <article class="post">
+    <nav class="crumbs" aria-label="위치"><a href="/">홈</a> › <a href={`/categories/${catKey}/`}>{cat.label}</a></nav>
+    <h1>{post.data.title}</h1>
+    <p class="post-meta">
+      <time datetime={post.data.date.toISOString()}>{dateText}</time>
+      <span aria-hidden="true">·</span>
+      <span>감성개발자</span>
+      {displayTags(post).map((t) => <span class="chip">#{t}</span>)}
+    </p>
+    <p class="disclosure" role="note">{PARTNERS_DISCLOSURE}</p>
+    {post.data.oneLineSummary && (
+      <div class="verdict">
+        <strong>한 줄 결론</strong>
+        <p>{post.data.oneLineSummary}</p>
+      </div>
+    )}
+    <div class="prose">
+      <Content />
+    </div>
+    {post.data.canonical && (
+      <p class="origin-note">이 글의 원문은 <a href={post.data.canonical}>감성개발자 블로그</a>에 있습니다.</p>
+    )}
+  </article>
+
+  {related.length > 0 && (
+    <section class="section related">
+      <div class="section-head"><h2>{cat.label} 다른 정리</h2></div>
+      <div class="card-grid">{related.map((p) => <PostCard post={p} />)}</div>
+    </section>
+  )}
+</BaseLayout>

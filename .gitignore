@@ -1,0 +1,41 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Astro cache
+.astro/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Editor
+.idea/
+.vscode/
+
+# Tool state
+.omc/
+.omx/
+.gstack/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+npm-debug.log*
+yarn-error.log
+
+# Local agent skills/config (not deployed)
+.claude/
+
+# Local-only agent rules & writing guides (not published to GitHub)
+CLAUDE.md
+AGENTS.md
+docs/writing-guides/
+docs/taxonomy-authoring-guide.md
+docs/templates/
+skills/
