@@ -1,5 +1,4 @@
 ---
-canonical: "https://blog.lovizu.com/posts/anti-reflux-cushion/"
 title: "역류방지쿠션 추천, 로토토베베를 수유 후 보조쿠션으로 볼 때"
 slug: "anti-reflux-cushion"
 author: "감성개발자"

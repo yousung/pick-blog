@@ -47,9 +47,6 @@ const dateText = post.data.date.toLocaleDateString('ko-KR', { year: 'numeric', m
     <div class="prose">
       <Content />
     </div>
-    {post.data.canonical && (
-      <p class="origin-note">이 글의 원문은 <a href={post.data.canonical}>감성개발자 블로그</a>에 있습니다.</p>
-    )}
   </article>
 
   {related.length > 0 && (

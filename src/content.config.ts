@@ -16,7 +16,7 @@ const posts = defineCollection({
     ogImage: z.string().optional(),
     /** Product image shown on list cards (never an illustration). */
     thumbnail: z.string().optional(),
-    /** Set when the original lives elsewhere (e.g. parenting posts kept on blog.lovizu.com). */
+    /** Set when the original lives elsewhere (external original URL). */
     canonical: z.string().url().optional(),
     tistoryUrl: z.string().url().optional()
   })

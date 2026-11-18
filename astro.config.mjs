@@ -3,7 +3,7 @@ import sitemap from '@astrojs/sitemap';
 import rehypeRaw from 'rehype-raw';
 import rehypeAffiliate from './src/lib/rehype-affiliate.mjs';
 
-// Posts whose original lives on blog.lovizu.com (canonical points there) stay out of the sitemap.
+// Posts that declare an external canonical URL stay out of the sitemap.
 import { readCanonicalSlugs } from './src/lib/canonical-slugs.mjs';
 const externalCanonical = await readCanonicalSlugs(new URL('./src/content/posts/', import.meta.url));
 
