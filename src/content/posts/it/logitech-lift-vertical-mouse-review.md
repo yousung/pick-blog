@@ -6,6 +6,7 @@ date: "2026-08-25"
 summary: "손목 통증 때문에 갈아탄 로지텍 리프트(Lift) 버티컬 마우스 한 달 실사용 후기. 57도 인체공학 설계, 무소음 클릭, Easy-Switch 멀티페어링 장점부터 손 큰 사람 주의점, 적응 기간, 변색 이슈까지 개발자 관점에서 솔직하게 정리했습니다."
 oneLineSummary: "손목이 신호를 보내기 시작한 개발자에게, 리프트는 파스값보다 싼 투자다"
 tags: ["제품리뷰", "장비", "인체공학", "건강", "개발환경", "리뷰", "it"]
+thumbnail: "/images/tistory/logitech-lift-vertical-mouse-review/1.jpg"
 status: "published"
 tistoryUrl: "https://tistory.lovizu.com/entry/logitech-lift-vertical-mouse-review"
 ---
@@ -56,6 +57,9 @@ tistoryUrl: "https://tistory.lovizu.com/entry/logitech-lift-vertical-mouse-revie
 ## 한 달 실사용: 손목은 정말 편해졌나
 
 결론부터 말하면, 시큰거리는 빈도가 눈에 띄게 줄었다. 마우스 하나 바꿨다고 손목이 완치되는 마법 같은 건 당연히 없다. 다만 하루가 끝났을 때 손목 바깥쪽에 남던 묵직한 피로감이 확실히 덜하다. 손등이 하늘을 보는 자세와 엄지가 하늘을 보는 자세의 차이가 열 시간 누적되면 이 정도 차이를 만드는구나 싶다.
+
+![손목 통증에 시달리던 모습과 부담이 풀려 편안해진 모습을 나란히 비교한 장면 일러스트](/images/posts/logitech-lift-vertical-mouse-review/illust-01.jpg)
+*일러스트: 손목의 묵직한 피로가 풀리는 순간*
 
 기능 면에서 기대 안 했다가 잘 쓰는 건 두 가지다. 하나는 Easy-Switch다. 회사 맥북, 집 데스크탑, 아이패드까지 3대를 등록해 두고 바닥의 버튼으로 전환하는데, 마우스 하나를 가방에 넣고 다니면서 어디서든 그대로 쓴다. 다른 하나는 SmartWheel 스크롤이다. 코드 리뷰할 때는 한 줄씩 정밀하게, 긴 로그 파일 볼 때는 휠을 세게 굴려서 고속으로 내려가는데, 이 전환이 자연스러워서 손에 익으면 되돌아가기 어렵다.
 
