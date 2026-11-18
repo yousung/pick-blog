@@ -19,7 +19,11 @@ const posts = (await getPublishedPosts()).filter((p) => getCategory(p) === categ
     <h1>{meta.label}</h1>
     <p>{meta.blurb} · {posts.length}편</p>
   </section>
-  <div class="card-grid">
-    {posts.map((post, i) => <PostCard post={post} eager={i < 2} />)}
-  </div>
+  {posts.length > 0 ? (
+    <div class="card-grid">
+      {posts.map((post, i) => <PostCard post={post} eager={i < 2} />)}
+    </div>
+  ) : (
+    <p class="empty-note">{meta.label} 상품 글을 준비하고 있습니다. 곧 고르는 기준과 후기 정리로 찾아올게요.</p>
+  )}
 </BaseLayout>

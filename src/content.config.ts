@@ -14,6 +14,8 @@ const posts = defineCollection({
     status: z.enum(['draft', 'published']),
     updatedDate: z.coerce.date().optional(),
     ogImage: z.string().optional(),
+    /** Product image shown on list cards (never an illustration). */
+    thumbnail: z.string().optional(),
     /** Set when the original lives elsewhere (e.g. parenting posts kept on blog.lovizu.com). */
     canonical: z.string().url().optional(),
     tistoryUrl: z.string().url().optional()

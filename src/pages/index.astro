@@ -20,7 +20,7 @@ const counts = Object.fromEntries(keys.map((k) => [k, posts.filter((p) => getCat
         <a class="cat-pill" href={`/categories/${k}/`}>
           <span aria-hidden="true">{CATEGORIES[k].emoji}</span>
           <strong>{CATEGORIES[k].label}</strong>
-          <small>{counts[k]}편</small>
+          <small>{counts[k] > 0 ? `${counts[k]}편` : "준비 중"}</small>
         </a>
       ))}
     </div>
