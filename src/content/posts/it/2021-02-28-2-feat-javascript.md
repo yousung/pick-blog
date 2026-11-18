@@ -9,6 +9,7 @@ tags: ['책리뷰', '리팩토링', 'JavaScript', 'coupang', 'cleancode']
 status: "published"
 updatedDate: "2026-05-30"
 tistoryUrl: "https://tistory.lovizu.com/entry/%EB%A6%AC%ED%8C%A9%ED%86%A0%EB%A7%81-2%ED%8C%90-feat-javascript"
+thumbnail: "https://cdn-blog.lovizu.com/bloa/coupang/2026/05/refactoring-2-javascript-8322920484.webp"
 ---
 
 개발서 구매는 최신 유행보다 지금 내 코드에 적용할 수 있는지가 중요합니다. `리팩토링 - 코드 구조를 체계적으로 개선하여 효율적인 리팩터링 구현하기 (2판)`은 코드가 커지고 수정이 무서워질 때 책상 옆에 둘 만한 책인지 따져보게 되는 제목입니다. JavaScript 예제로 바뀐 2판이라 웹 개발자 입장에서도 접근성이 좋아졌습니다.
@@ -45,6 +46,9 @@ tistoryUrl: "https://tistory.lovizu.com/entry/%EB%A6%AC%ED%8C%A9%ED%86%A0%EB%A7%
 코드 냄새, 함수 추출, 조건문 정리, 데이터 구조 개선처럼 매일 보는 코드를 다루므로 한 번 읽고 끝내기보다 프로젝트 중간중간 다시 펼치는 성격의 책입니다.
 
 
+![엉킨 리본을 곧게 풀어내는 장면 일러스트](/images/posts/refactoring-2-javascript-review/illust-01.jpg)
+*일러스트: 엉킨 코드를 한 가닥씩 곧게 풀어내는 리팩토링의 비유*
+
 ## 생활에서 먼저 체감될 장점
 
 독자 반응에서 자주 보이는 장점은 고전으로 검증된 주제를 현대 언어 예제로 다시 볼 수 있다는 점입니다. Java나 객체지향 문법에 갇힌 설명보다 웹 개발자가 따라가기 쉬운 편입니다.
@@ -57,6 +61,9 @@ tistoryUrl: "https://tistory.lovizu.com/entry/%EB%A6%AC%ED%8C%A9%ED%86%A0%EB%A7%
 예제와 설명이 가벼운 입문서처럼 술술 읽히는 타입은 아닙니다. 코드를 직접 고쳐 본 경험이 적으면 초반에는 지루할 수 있습니다.
 
 또한 책을 읽는 것만으로 팀 코드가 좋아지지는 않습니다. 테스트, 코드 리뷰, 배포 안정성 같은 팀 문화와 함께 적용해야 효과가 납니다.
+
+![뒤죽박죽 상자를 책장에 정리하는 장면 일러스트](/images/posts/refactoring-2-javascript-review/illust-02.jpg)
+*일러스트: 제자리를 찾아 주는 정리, 리팩토링이 하는 일*
 
 ## 추천 대상
 
